@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from api.tastymodel import TastyModel
 import string, random
 
 def id_generator(size=6, chars=string.ascii_uppercase + string.digits):
@@ -96,7 +97,7 @@ class UserProfile(models.Model):
 class Reader(models.Model):
     mail = models.CharField(max_length = 255)
 
-class Message(models.Model):
+class Message(models.Model, TastyModel):
     description = models.TextField()
     message = models.TextField()
     reveal_on = models.DateTimeField()
@@ -111,6 +112,18 @@ class Message(models.Model):
 
         super(Message, self).save(*args, **kwargs)
 
+    @classmethod
+    def create_test_model(cls, data):
+        from datetime import datetime
+
+        data = {
+            'description' : 'soy una descripcion',
+            'message' : 'yo si',
+            'reveal_on' : datetime.now(),
+            'admin_code' : "ASDSAAFA",
+            'code' : "ASDGFAASAAFA",
+        }
+        return super(Message, cls).create_test_model(data)
 
 
 class Writer(models.Model):

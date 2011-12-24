@@ -12,10 +12,39 @@ from datetime import datetime
 
 class MessageResource(ModelResource):
 
+    description = fields.CharField(attribute='description', help_text='A public description of the message')
+    message = fields.CharField(attribute='message', help_text='The hidden messsage.')
+    reveal_on = fields.DateField(attribute='reveal_on', help_text='Date when the message will be revealed.')
+    code = fields.CharField(attribute='code', readonly=True, help_text="The public code to id the message")
+    admin_code = fields.CharField(attribute='admin_code', help_text="A private code to enter the message admin page.")
+
+
     class Meta:
         queryset = Message.objects.all()
         authorization = Authorization()
-        excludes = ['opened','readed']
+        excludes = ['opened','readed','id']
+        resource_class = Message
+        examples = {
+                'POST' : {
+                    'description' : 'bla bla',
+                    'message' : 'el mensaje',
+                    'reveal_on' : '12-12-12T01:03:05',
+                },
+                'GET' : {
+                    'description' : 'bla bla',
+                    'message' : 'el mensaje',
+                    'reveal_on' : '12-12-12T01:03:05',
+                    'code' : 'HGFSCVZSA2B',
+                    'resource_id' : '/api/resources/message/1/',
+                }
+            }
+
+    def obj_update(self, bundle, request=None, **kwargs):
+        try:
+            del bundle.data['admin_code']
+        except KeyError:
+            pass
+        return super(MessageResource, self).obj_update(bundle, request, **kwargs)
 
     def full_dehydrate(self, bundle):
         bundle = super(MessageResource, self).full_dehydrate(bundle)
