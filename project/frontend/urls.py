@@ -4,5 +4,7 @@ import views
 
 urlpatterns = patterns('',
         (r'^$', views.home),
-        (r'^login$', views.login),
+        (r'^admin_message/$', views.admin_message),
+        (r'^message/$', views.message),
+        #(r'^login$', views.login),
 )
