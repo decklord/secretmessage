@@ -5,6 +5,6 @@ import views
 urlpatterns = patterns('',
         (r'^$', views.home),
         (r'^admin_message/$', views.admin_message),
-        (r'^message/$', views.message),
+        (r'^message/(\d+)/$', views.message),
         #(r'^login$', views.login),
 )

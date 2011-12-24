@@ -11,35 +11,46 @@
   <script type="text/javascript" charset="utf-8">
     $(document).ready(function() {
     
-      //$.getJSON('');
+      $.getJSON('/api/resources/message/{{message.id}}/',function(response){
+        console.log(response.message);
+        dateEnd = new Date((new Date()).getTime() + response.reveal_on*1000);
+        $('#defaultCountdown').countdown({until: dateEnd, format: 'YOWDHMS',onExpiry: set_message()});
+      });
       
       var newYear = new Date(); 
-      endDate = new Date(newYear.getFullYear()+1, 1 - 1, 2);
-      $('#defaultCountdown').countdown({until: endDate, format: 'YOWDHMS'}); 
+      console.log(newYear.getFullYear())
+      endDate = new Date(newYear.getFullYear(), 11, 24,5,7);
+      console.log(endDate.toString());
+       
     });
+
+    function set_message(){
+      console.log("caca")
+      setTimeout(function(){
+        $.getJSON('/api/resources/message/{{message.id}}/',function(response){
+          console.log(response);
+          $(".alert").toggle();
+          $("#defaultCountdown").html(response.message);
+        },1000);
+      });
+    }
+
   </script>
 
 {% endblock %}
 {% block header %}{% endblock %}
 
 {% block container %}
-      <h2>Mensaje: <span class="message_id">idraro123</span></h2>
+
+      <div class="alert" style='display:none;'>
+        El mensaje pudo ser abierto ahora!
+      </div>
+
+      <h2>Mensaje: <span class="message_id">{{message.description}}</span></h2>
       
       <p>Te han enviado un mensaje secreto!, sin embargo aún no puedes verlo, tienes que esperar:</p>
       
       <div id="defaultCountdown"></div>
 
-
-    <!--
-      <div class="alert">
-        El mensaje pudo ser abierto ahora!
-      </div>
-
-      <h2>un mensaje secreto</h2>
-
-      <div>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </div>
-      -->
 {% endblock %}
     
