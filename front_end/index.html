@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <title>Secret Message</title>
+  <link rel="stylesheet" href="css/screen.css" type="text/css" media="screen" charset="utf-8">
+</head>
+<body>
+  <div id="container">
+    <h1 id="main_title">Secret Message</h1>
+    
+    <div id="content">
+      <p>Una aplicación para crear mensajes para quien quieras y que no lo pueda verlos hasta el momento indicado</p>
+
+      <div id="create_message">
+        <h2>Crear Nuevo Mensaje</h2>
+
+        <form action="" method="post" accept-charset="utf-8">
+          <p>
+            <label for="title">Título</label>
+            <input type="text" name="title" value="" id="title">
+          </p>
+          <p>
+            <label for="message">Mensaje</label>
+            <textarea id="message" rows="15" cols="40"></textarea>
+          </p>
+          <p>
+            <label for="date">Fecha</label>
+            <input type="date" id="date" name="date" />
+          </p>
+          <p>
+            <label for="hour">Hora</label>
+            <input type="time" id="hour" name="hour" required="required" autocomplete="on" />
+          </p>
+          <input type="button" name="submit" value="Crear Mensaje" id="submit">
+        </form>
+      </div>  
+    </div>
+    
+  </div>
+</body>
+</html>
