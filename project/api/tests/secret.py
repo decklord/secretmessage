@@ -3,6 +3,20 @@ from klooff.test import KlooffClient as Client
 from api.application import SecretApi as Api
 
 class SecretTest(TestCase):
+    def test_change_admin_code(self):
+        api = Api()
+        client = Client()
+
+        (location, obj) = api.resources['message'].create_test_resource()
+        old_code = obj.admin_code
+        new_code = "GDFGACVAS"
+        patch_data = { "admin_code" :  new_code }
+        response = client.patch(location, patch_data, parse='json')
+        obj = obj.__class__.objects.get(id=obj.id)
+        self.assertEqual(old_code, obj.admin_code)
+
+        print location
+
     def test_dehydrate(self):
         api = Api()
         msg_uri = api.resources['message'].get_resource_list_uri()
@@ -10,13 +24,13 @@ class SecretTest(TestCase):
         future_data = {
             'description' : 'soy una descripcion',
             'message' : 'yo no deberia estar aca',
-            'reveal_on' : '2012-01-01T00:00:01',
+            'time_to_reveal' : 6000,
             'admin_code' : "ASDSAAFA",
         }
         past_data = {
             'description' : 'soy una descripcion',
             'message' : 'yo si',
-            'reveal_on' : '2010-01-01T00:00:01',
+            'time_to_reveal' : -6000,
             'admin_code' : "ASDSAAFA",
         }
 

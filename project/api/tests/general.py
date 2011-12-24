@@ -226,6 +226,7 @@ class UnderResourceFields(MultiTestCase):
     @staticmethod
     def multi_readonly_patch(self, resource_name, resource, field_name, field):
         client = Client()
+        api = Api()
 
         if field.readonly and resource.can_create() :
             #Create a resource to modify it
@@ -233,7 +234,7 @@ class UnderResourceFields(MultiTestCase):
             bad_value = UnderResourceFields.generate_field_test_data(field)
 
             #authenticate to be allowed to modify the resource
-            post_data = resource.get_example_data('POST')
+            post_data = api.resources['userprofile'].get_example_data('POST')
             client.login(username=post_data['email'], password=post_data['password'])
 
             #attempt to PATCH
