@@ -88,10 +88,10 @@ class UserProfile(models.Model):
     def email(self, value):
         self.user.email = value
 
-class Reader(Person)
+class Reader(models.Model):
 	mail = models.CharField(max_length = 255)
 
-class Writer(Person)
+class Writer(models.Model):
 	mail = models.CharField(max_length = 255)
 
 class Message(models.Model):
