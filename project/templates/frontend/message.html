@@ -12,9 +12,15 @@
     $(document).ready(function() {
     
       $.getJSON('/api/resources/message/{{message.id}}/',function(response){
-        console.log(response.message);
-        dateEnd = new Date((new Date()).getTime() + response.reveal_on*1000);
-        $('#defaultCountdown').countdown({until: dateEnd, format: 'YOWDHMS',onExpiry: set_message()});
+        console.log(response);
+        if(response.time_to_reveal <= 0){
+          $('#defaultCountdown').html("mensaje:<b>"+response.message+"</b>");
+        } else{
+          dateEnd = new Date((new Date()).getTime() + response.time_to_reveal*1000);
+          $('#defaultCountdown').countdown({until: dateEnd, format: 'YOWDHMS',onExpiry: function(){set_message()}});
+          
+        } 
+
       });
       
       var newYear = new Date(); 
@@ -25,14 +31,13 @@
     });
 
     function set_message(){
-      console.log("caca")
       setTimeout(function(){
         $.getJSON('/api/resources/message/{{message.id}}/',function(response){
           console.log(response);
           $(".alert").toggle();
-          $("#defaultCountdown").html(response.message);
-        },1000);
-      });
+          $("#defaultCountdown").html("mensaje:<b>"+response.message+"</b>");
+        });
+      },1000);
     }
 
   </script>

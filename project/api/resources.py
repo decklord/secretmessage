@@ -60,9 +60,13 @@ class MessageResource(ModelResource):
             bundle.data['message'] = ""
         del bundle.data['admin_code']
 
+        revealDate =  bundle.obj.reveal_on
         now = datetime.now()
-        delta = bundle.obj.reveal_on - now
-        bundle.data['time_to_reveal'] = delta.seconds
+        if now > revealDate:
+            bundle.data['time_to_reveal'] = 0
+        else :
+            delta = revealDate - now
+            bundle.data['time_to_reveal'] = delta.seconds
         return bundle
 
 
