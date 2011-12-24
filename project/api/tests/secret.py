@@ -24,13 +24,13 @@ class SecretTest(TestCase):
         future_data = {
             'description' : 'soy una descripcion',
             'message' : 'yo no deberia estar aca',
-            'reveal_on' : '2012-01-01T00:00:01',
+            'time_to_reveal' : 6000,
             'admin_code' : "ASDSAAFA",
         }
         past_data = {
             'description' : 'soy una descripcion',
             'message' : 'yo si',
-            'reveal_on' : '2010-01-01T00:00:01',
+            'time_to_reveal' : -6000,
             'admin_code' : "ASDSAAFA",
         }
 

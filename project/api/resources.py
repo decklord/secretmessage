@@ -8,13 +8,13 @@ from models import UserProfile, Message
 from tastypie.authorization import Authorization
 import settings
 
-from datetime import datetime
+from datetime import datetime, timedelta
 
 class MessageResource(ModelResource):
 
     description = fields.CharField(attribute='description', help_text='A public description of the message')
     message = fields.CharField(attribute='message', help_text='The hidden messsage.')
-    reveal_on = fields.DateField(attribute='reveal_on', help_text='Date when the message will be revealed.')
+    time_to_reveal = fields.DateField(help_text='Time in seconds until reveal.')
     code = fields.CharField(attribute='code', readonly=True, help_text="The public code to id the message")
     admin_code = fields.CharField(attribute='admin_code', help_text="A private code to enter the message admin page.")
 
@@ -22,18 +22,18 @@ class MessageResource(ModelResource):
     class Meta:
         queryset = Message.objects.all()
         authorization = Authorization()
-        excludes = ['opened','readed','id']
+        excludes = ['opened','readed','id', 'reveal_on']
         resource_class = Message
         examples = {
                 'POST' : {
                     'description' : 'bla bla',
                     'message' : 'el mensaje',
-                    'reveal_on' : '12-12-12T01:03:05',
+                    'time_to_reveal' : 4000,
                 },
                 'GET' : {
                     'description' : 'bla bla',
                     'message' : 'el mensaje',
-                    'reveal_on' : '12-12-12T01:03:05',
+                    'time_to_reveal' : 4000,
                     'code' : 'HGFSCVZSA2B',
                     'resource_id' : '/api/resources/message/1/',
                 }
@@ -46,12 +46,23 @@ class MessageResource(ModelResource):
             pass
         return super(MessageResource, self).obj_update(bundle, request, **kwargs)
 
+    def hydrate_time_to_reveal(self, bundle):
+        now = datetime.now()
+        ttr = int(bundle.data['time_to_reveal'])
+        delta = timedelta(seconds=ttr)
+        bundle.obj.reveal_on = now + delta
+        return bundle
+
     def full_dehydrate(self, bundle):
         bundle = super(MessageResource, self).full_dehydrate(bundle)
         now = datetime.now()
         if bundle.obj.reveal_on > now:
             bundle.data['message'] = ""
         del bundle.data['admin_code']
+
+        now = datetime.now()
+        delta = bundle.obj.reveal_on - now
+        bundle.data['time_to_reveal'] = delta.seconds
         return bundle
 
 

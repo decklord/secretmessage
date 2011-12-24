@@ -1,16 +1,20 @@
 {% extends "frontend/layout.html" %}
-{% block extra_head %}{% endblock %}
+{% load media %}
+
+{% block extra_head %}
+    {% media js:home %}
+{% endblock %}
 {% block header %}{% endblock %}
 
 {% block container %}
-<p>Una aplicación que te permite crear mensajes a quien quieras y que no lo pueda ver hasta el momento indicado.</p>
+<p>Una aplicaci&oacute;n que te permite crear mensajes a quien quieras y
+que no lo pueda ver hasta el momento indicado.</p>
 
       <div id="create_message">
         <h2>Crear Nuevo Mensaje</h2>
 
-        <form action="" method="post" accept-charset="utf-8">
           <p>
-            <label for="title">Título</label>
+            <label for="title">T&iacute;tulo</label>
             <input type="text" name="title" value="" id="title">
           </p>
           <p>
@@ -21,12 +25,7 @@
             <label for="date">Fecha</label>
             <input type="date" id="date" name="date" />
           </p>
-          <p>
-            <label for="hour">Hora</label>
-            <input type="time" id="hour" name="hour" required="required" autocomplete="on" />
-          </p>
-          <input type="button" name="submit" value="Crear Mensaje" id="submit">
-        </form>
+          <button id='submit'>Crear Mensaje</button>
       </div>  
       <!--
       <div class="alert">
@@ -36,8 +35,10 @@
       <h2>Ahora puedes</h2>
 
       <ul id="actions">
-        <li>Envíar el link del mensaje: <a href="">http://secret-message.com/message/randomid1234</a></li>
-        <li>Editar o administrar el mensaje: <a href="">http://secret-message.com/message/randomid1234/admin/customCode</a></li>
+          <li>Enviar el link del mensaje:
+          <a href="">http://secret-message.com/message/randomid1234</a></li>
+          <li>Editar o administrar el mensaje: 
+          <a href="">http://secret-message.com/message/randomid1234/admin/customCode</a></li>
       </ul>
       -->
 
