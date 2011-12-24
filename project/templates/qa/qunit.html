@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load media %}
+
+{% block extra_head %}
+    {% media css:lib/qunit%}
+    {% media js:lib/qunit %}
+    {% media js:lib/swarminject %}
+    <script type='text/javascript'>
+        QUnit.config.autostart = false;
+        setTimeout(function(){
+            tests = ['qa/klooff','qa/test']
+            require(tests, function(){
+                QUnit.start();
+            })
+        }, 500);
+    </script>
+{% endblock %}
+
+{% block content %}
+	<h1 id="qunit-header">QUnit Test Suite</h1>
+	<h2 id="qunit-banner"></h2>
+	<div id="qunit-testrunner-toolbar"></div>
+	<h2 id="qunit-userAgent"></h2>
+	<ol id="qunit-tests"></ol>
+	<div id="qunit-fixture">test markup</div>
+{% endblock %}

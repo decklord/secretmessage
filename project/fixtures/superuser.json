@@ -1,0 +1,1 @@
+[{"pk": 1, "model": "auth.user", "fields": {"username": "klooff", "first_name": "", "last_name": "", "is_active": true, "is_superuser": true, "is_staff": true, "last_login": "2011-12-21 10:15:48", "groups": [], "user_permissions": [], "password": "sha1$96093$6ac719a93f6652bcb51966f870f754edc4c6e761", "email": "klooff@klooff.com", "date_joined": "2011-12-21 10:14:24"}}]

@@ -1,0 +1,526 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Elements */
+
+* {
+}
+body {
+	background: url(../img/bg.png);
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
+}
+img, button {
+	border: 0;
+}
+/* header */
+
+#head_bg {
+	background: top center repeat-x url(../img/top_banner.png);
+	height: 113px;
+}
+#header {
+	height: 113px;
+	margin: 0 auto;
+	width: 980px;
+}
+#head_left {
+	float: left;
+	width: 244px;
+	height: 100px;
+	background: top center url(../img/logo_bg.png);
+}
+#head_left img {
+	position: relative;
+	top: 11px;
+	left: 35px;
+}
+#head_center {
+	float: left;
+}
+#head_login {
+	float: right;
+	width: 600px;
+	text-align: right;
+	color: #FFF;
+	margin-top: 25px;
+	font-size: 10px;
+}
+#head_login a {
+	color: #FFF;
+}
+#head_right {
+	float: right;
+	width: 300px;
+	text-align: right;
+	color: #FFF;
+	margin-top: 25px;
+	font-size: 10px;
+}
+
+#head_right a {
+	color: #FFF;
+}
+#head_right .fb_img {
+	float: right;
+	margin-left: 5px;
+}
+#head_right .fb_name {
+	font-size:14px;
+	font-weight: bold;
+	text-decoration: none;
+}
+#head_right .new_message {
+	background: #F00;
+	padding: 0 5px;
+	border-radius: 4px;
+	float: right;
+}
+#head_right .fb_name:hover {
+	text-decoration:underline;
+}
+
+#head_center .search {
+	padding: 10px 5px 10px 40px;
+	border-radius: 10px;
+	color: #999;
+	border: 1px solid #25848b;
+	margin: 30px;
+	width: 300px;
+	font-size: 14px;
+	background: left no-repeat url(../img/foot.png) #FFF;
+	background-position: 5px 4px;
+}
+/* sidebar */
+#sidebar {
+	float: left;
+	width: 243px;
+	background: url(../img/logo_bg.png);
+}
+
+.section {
+	border-bottom: 1px solid #CCC;
+}
+
+#sections ul li{
+	list-style-type: none;
+	line-height: 2.5;
+	margin-left: -20px;
+	padding-left: 5px;
+}
+
+#sections ul li:hover, .secActive{
+	background: #E3E3E3;
+}
+
+#sections ul li a{
+	text-decoration: none;
+	color: #666;
+	padding: 10px 5px 10px 30px;
+	width: 200px;
+}
+
+.sec_profile {
+	background: left no-repeat url(../img/ico_profile2.png);
+}
+
+.sec_privacy {
+	background: left no-repeat url(../img/ico_privacy.png);
+}
+
+.sec_avatar {
+	background: left no-repeat url(../img/ico_avatar.png);
+}
+
+.sec_pets {
+	background: left no-repeat url(../img/ico_bird.png);
+}
+
+.sec_mobile {
+	background: left no-repeat url(../img/ico_mobile.png);
+}
+
+.sec_newpet {
+	background: left no-repeat url(../img/ico_add.png);
+}
+
+.sec_videos {
+	background: left no-repeat url(../img/ico_video.png);
+}
+
+.sec_photos {
+	background: left no-repeat url(../img/ico_photos.png);
+}
+
+.sec_info {
+	background: left no-repeat url(../img/ico_petinfo.png);
+}
+
+.sec_wall {
+	background: left no-repeat url(../img/ico_wall.png);
+}
+
+#lovemeter {
+	float: right;
+	margin-right: 20px;
+}
+
+#friends_list {
+	padding: 10px;
+}
+
+#friends_list .friend_name {
+	float: left;
+	margin-bottom: 5px;
+	font-weight: bold;
+}
+
+#friends_list .friend_name {
+	text-decoration: none;
+	color: #09F;
+}
+
+#friends_list .friend_name:hover {
+	text-decoration: underline;
+}
+
+#friends_list .friend_avatar {
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #EEE;
+}
+
+#friends_list .friend_avatar img {
+	float: left;
+	margin-right: 5px;
+}
+
+/* MainMenu */
+#infoarea {
+	float: left;
+	width: 630px;
+	padding: 5px;
+	border-radius: 5px;
+	background: #FF9;
+	border: 1px solid #FC3;
+	color: #930;
+}
+
+#mainmenu {
+	float: right;
+}
+
+#mainmenu a {
+	text-decoration: none;
+}
+
+.menuitem, .menuitem_active {
+	float: left;
+	padding: 8px 20px 8px 40px;
+	background:#FFF;
+	background-repeat: no-repeat;
+	margin-right: 5px;
+	border-top: 1px solid #CCC;
+	border-left: 1px solid #CCC;
+	border-right: 1px solid #CCC;
+}
+
+.menuitem:hover, .menuitem_active {
+	background-color:#c5e9ec;
+}
+
+.tabhome {
+	background-image: url(../img/ico_home.png);
+	background-position: 10px 5px;
+}
+
+.tabsettings {
+	background-image: url(../img/ico_gear.png);
+	background-position: 10px 5px;
+}
+
+.tabprofile {
+	background-image: url(../img/ico_profile.png);
+	background-position: 10px 5px;
+}
+
+/* container */
+#container {
+	margin: 0 auto;
+	width: 980px;
+}
+#content {
+	float: right;
+	width: 734px;
+	border: 1px solid #CCC;
+	background: #FFF;
+}
+
+#homecontent {
+	background: center top no-repeat url(../img/homebg.png);
+	height: 510px;
+	position: relative;
+}
+
+#homeText {
+	position:absolute;
+	font-size: 25px;
+	top: 230px;
+	left: 300px;
+}
+
+#homeButton {
+	position:absolute;
+	top: 220px;
+	left: 700px;
+}
+
+#homeSingUp {
+	float: right;
+	background: #F60 url(../img/btn_overlay.png) repeat-x;
+	display: inline-block;
+	padding: 10px 20px 10px;
+	color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+	line-height: 1;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+	border-bottom: 1px solid rgba(0,0,0,0.25);
+	position: relative;
+	cursor: pointer;
+	cursor:hand;
+	font-size: 24px;
+	margin-right: 20px;
+}
+
+#homeSingUp:hover {
+	background: #F90 url(../img/btn_overlay.png) repeat-x;
+	box-shadow: 0 0 10px rgba(255,198,61,0.5);
+	-moz-box-shadow: 0 0 10px rgba(255,198,61,0.5);
+	-webkit-box-shadow: 0 0 10px rgba(255,198,61,0.5);
+}
+
+#homeFBContainer {
+	position: absolute;
+	top: 400px;
+	left: 750;
+}
+
+#page_title {
+	padding-left: 20px;
+}
+
+#page_title h1{
+	color:#09F;
+	text-shadow: 1px 1px #333;
+}
+
+#page_title h4{
+	color:#888;
+}
+
+#fb_info {
+	background: #EDEFF4;
+	padding: 10px 20px;
+}
+
+#fb_info .avatar {
+	float: left;
+	margin-right: 10px;
+}
+
+.specie {
+	padding: 3px 5px 0 20px;
+	margin-right: 10px;
+	background: left no-repeat url(../img/ico_animal.png);
+}
+
+.breed {
+	padding: 3px 5px 0 20px;
+	margin-right: 10px;
+	background: left no-repeat url(../img/ico_breed.png);
+}
+
+.sex {
+	padding: 3px 5px 0 20px;
+	margin-right: 10px;
+	background: left no-repeat url(../img/ico_female.png);
+}
+
+.birthday {
+	padding: 3px 5px 0 20px;
+	margin-right: 10px;
+	background: left no-repeat url(../img/ico_calendar.png);
+}
+
+.follow {
+	float: right;
+	background: #F60 url(../img/btn_overlay.png) repeat-x;
+	display: inline-block;
+	padding: 5px 10px 6px;
+	color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+	line-height: 1;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+	border-bottom: 1px solid rgba(0,0,0,0.25);
+	position: relative;
+	cursor: pointer;
+	cursor:hand;
+	margin-right: 20px;
+}
+
+.follow:hover {
+	background: #F00 url(../img/btn_overlay.png) repeat-x;
+}
+
+#lastpics h2 {
+	margin-left: 20px;
+}
+
+#picbox {
+}
+
+#picfooter {
+	border: 1px solid #CCC;
+	background: #E1E1E1;
+	padding: 5px;
+	text-align: left;
+	font-size: 10px;
+}
+
+/* forms */
+
+.formtable {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	width: 100%;
+}
+
+.formtable td, .formtable th {
+	padding: 5px;
+	height: 20px;
+}
+
+.formtable th {
+	text-align: left;
+	padding-left: 30px;
+	background: #CCC;
+}
+
+.formtable input, .formtable select {
+	padding: 3px;
+	border-radius: 5px;
+	border: 1px solid #CCC;
+}
+
+.formtable input:focus {
+	background: #C4E1FF;
+}
+
+.submit {
+	float: right;
+	background: #06F url(../img/btn_overlay.png) repeat-x;
+	display: inline-block;
+	padding: 5px 10px 6px;
+	color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+	line-height: 1;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+	border-bottom: 1px solid rgba(0,0,0,0.25);
+	position: relative;
+	cursor: pointer;
+	cursor:hand;
+	margin-right: 20px;
+}
+
+.submit:hover {
+	background: #09F url(../img/btn_overlay.png) repeat-x;
+}
+
+/* posts */
+
+#posts, #forms, #picbox {
+	padding: 10px 14px 10px 20px;
+}
+
+#posts a, #forms a {
+	color: #09F;
+	text-decoration: none;
+}
+
+#posts a:hover, #forms a:hover {
+	text-decoration: underline;
+}
+
+.post {
+	border-bottom: 1px solid #CCC;
+	margin: 10px 0;
+	padding: 10px 0 20px 0;
+}
+
+.post_title {
+	margin: 0 0 5px 0;
+	color: #5c0b6a;
+}
+
+.post_avatar {
+	float: left;
+	margin-right: 15px;
+}
+
+.post_footer {
+	color: #999;
+	font-size: 10px;
+}
+
+/* footer */
+#footer {
+	font-size: 10px;
+	text-align: right;
+	background: #FFF;
+	padding: 0 10px 10px 0;
+}
+
+#footer a {
+	color:#09F;
+}
+
+/* fix */
+
+.devBorder {
+	border: 1px solid #f00;
+}
+
+.roundimage {
+	border-radius: 5px;
+}
+
+.roundfield {
+	border: none;
+	border-radius: 5px;
+	padding: 5px;
+}

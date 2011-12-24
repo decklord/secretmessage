@@ -1,0 +1,104 @@
+{% extends "frontend/layout.html" %}
+{% load media %}
+
+{% block extra_head %}
+
+    {% media js:jquery-ui-1.8.16.custom.min %}
+    {% media js:views/login %}
+    {% media js:jquery.validationEngine-en %}
+    {% media js:jquery.validationEngine %}
+    {% media css:validationEngine.jquery %}
+    {% media css:redmond/jquery-ui-1.8.16.custom %}
+
+{% endblock %}
+
+{% block header %}
+        <a href="/">
+            <div id="head_left">
+                {% media img:logo.png %}
+            </div>
+        </a>
+        <div id="head_login">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td align="right" valign="top"><a href="#">Are you already registered?</a> <a href="#">Lost your password?</a></td>
+                    <td align="left" valign="middle">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td width="497" align="right" valign="top">
+                    	<form id="loginform">
+                            <input type="text" name="email" id="email" placeholder="Your email" class="roundfield validate[required,custom[email]]"/>
+                            <input type="password" name="pass" id="pass" placeholder="Your password" class="roundfield validate[required]" />
+                        </form>
+                    </td>
+                    <td width="103" align="left" valign="middle">
+                    	<button type="submit" id="btnLogin" name="btnLogin" class="submit">Sign in</button>
+                        <div id="reg_dialog" title="Complete basic info">
+                        	<form id="registerform">
+                            <table class="formtable">
+                                <tr>
+                                    <td>Name</td>
+                                    <td><input name="regName" id="regName" type="text" class="validate[required]"></td>
+                                </tr>
+                                <tr>
+                                    <td>Last Name</td>
+                                    <td><input name="regLastName" id="regLastName" type="text" class="validate[required]"></td>
+                                </tr>
+                                <tr>
+                                    <td>Email</td>
+                                    <td><input name="regEmail" id="regEmail" type="text" class="validate[required,custom[email]]"></td>
+                                </tr>
+                                <tr>
+                                    <td>Password;</td>
+                                    <td><input name="regPass" id="regPass" type="password" class="validate[required]"></td>
+                                </tr>
+                                <tr>
+                                    <td>Repeat Password</td>
+                                    <td><input name="regPass2" id="regPass2" type="password" class="validate[required,equals[regPass]]"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">By pressing check in you are agree with <a href="#" target="_blank">Klooff terms & conditions</a></td>
+                                </tr>
+                            </table>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+{% endblock %}
+
+{% block container %}
+
+    <!-- homecontent -->
+    <div id="homecontent">
+        <div id="homeText">Don't have an account?</div>
+        <div id="homeButton">
+        	<div id="homeSingUp">Sing Up Now!</div>
+        </div>
+        <div id="homeFBContainer">
+            <!--
+            <div id="fb-root"></div>
+            <script src="https://connect.facebook.net/en_US/all.js#appId=25654264113&xfbml=1"></script>
+
+            <fb:registration 
+              fields="name,birthday,gender,location,email" 
+              redirect-uri="http://klooffdev.com/qa/echo"
+              width="530">
+            </fb:registration>
+            -->
+
+
+            <div id="fb-root"></div>
+            {% media js:facebook %}
+           <div class="fb-login-button", data-scope="email">Login with Facebook</div>
+        </div>
+    </div>
+    <!-- /homecontent -->
+    <!-- footer -->
+    <div id="footer">Klooff © 2011 · English (US) <a href="#">About</a> · <a href="#">Advertising</a> · <a href="#">Developers</a> · <a href="#">Careers</a> · <a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Help</a></div>
+    <!-- /footer -->
+    <div style="clear:both;"></div>
+{% endblock %}
+

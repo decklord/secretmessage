@@ -1,0 +1,25 @@
+{% load media %}
+<!DOCTYPE HTML>
+<html>
+    <head>
+        {% media js:lib/jquery-1.7.1.js %}
+        {% media js:lib/underscore %}
+        {% media js:lib/backbone %}
+        {% media js:lib/require %}
+        {% media js:lib/backbone-tastypie %}
+        {% media css:base %}
+        <script type='text/javascript'>
+            require.config({
+                baseUrl: "{{MEDIA_URL}}js/"
+            })
+        </script>
+
+        {% block extra_head %}
+        {% endblock %}
+    </head>
+
+    <body>
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>

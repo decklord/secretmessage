@@ -1,0 +1,7 @@
+*.pyc
+local_*
+*.sqlite3
+
+build/
+dist/
+*.egg*/
