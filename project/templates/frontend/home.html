@@ -7,45 +7,24 @@
 {% block header %}{% endblock %}
 
 {% block container %}
-<p>Envíalo ahora, leelo en el momento indicado.</p>
-
       <div class='alert' style='display:none'>
-        En hora buena, tu mensaje ha sido crado exitosamente! :D
-
-        Puedes enviar a tus amigos este link:
-
+        En hora buena, tu mensaje ha sido crado exitosamente! :D<br/>
+        Puedes enviar a tus amigos este link:<br/>
         <span class='link'></span>
-
       </div>
 
-      <div id="create_message">
-        <h2>Crear Nuevo Mensaje</h2>
-
+      <div class="form">
           <p>
-            <input type="text" name="title" value="" id="title" placeholder='Titulo (Visible)'>
+            <input type="text" name="title" value="" id="title" placeholder='Title (This will be visible)'>
           </p>
           <p>
-            <textarea id="message" rows="15" cols="40" placeholder='Mensaje Oculto'></textarea>
+            <textarea id="message" rows="15" cols="40" placeholder='Hidden message'></textarea>
           </p>
           <p>
-            <input type="date" id="date" name="date" placeholder="Fecha de publicación" />
+            <input type="date" id="date" name="date" placeholder="Publication Date" />
           </p>
           <a class='button' id='submit'>Crear Mensaje</a>
       </div>  
-      <!--
-      <div class="alert">
-        Tu mensaje ha sido creado correctamente!
-      </div>
-
-      <h2>Ahora puedes</h2>
-
-      <ul id="actions">
-          <li>Enviar el link del mensaje:
-          <a href="">http://secret-message.com/message/randomid1234</a></li>
-          <li>Editar o administrar el mensaje: 
-          <a href="">http://secret-message.com/message/randomid1234/admin/customCode</a></li>
-      </ul>
-      -->
 
 {% endblock %}
     
