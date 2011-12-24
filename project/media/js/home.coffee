@@ -1,10 +1,7 @@
-console.log "hola"
-
 $(document).ready ->
     $('#date').datetimepicker()
 
     $('#submit').click ->
-        console.log "click!"
         #date format: YYYY-MM-DD HH:MM[:ss[.uuuuuu]] 
         future = $('#date').datetimepicker('getDate')
         now = new Date()
@@ -30,6 +27,8 @@ $(document).ready ->
                     url : location
                     success : (r) ->
                         console.log(r)
+                        $('.link').html("<a href='message/"+r.code+"/'>Mensaje Oculto!</a>")
+                        $('.alert').toggle('fast')
 
             error : (error) ->
                 console.log "Error :("

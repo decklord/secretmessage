@@ -7,25 +7,30 @@
 {% block header %}{% endblock %}
 
 {% block container %}
-<p>Una aplicaci&oacute;n que te permite crear mensajes a quien quieras y
-que no lo pueda ver hasta el momento indicado.</p>
+<p>Envíalo ahora, leelo en el momento indicado.</p>
+
+      <div class='alert' style='display:none'>
+        En hora buena, tu mensaje ha sido crado exitosamente! :D
+
+        Puedes enviar a tus amigos este link:
+
+        <span class='link'></span>
+
+      </div>
 
       <div id="create_message">
         <h2>Crear Nuevo Mensaje</h2>
 
           <p>
-            <label for="title">T&iacute;tulo</label>
-            <input type="text" name="title" value="" id="title">
+            <input type="text" name="title" value="" id="title" placeholder='Titulo (Visible)'>
           </p>
           <p>
-            <label for="message">Mensaje</label>
-            <textarea id="message" rows="15" cols="40"></textarea>
+            <textarea id="message" rows="15" cols="40" placeholder='Mensaje Oculto'></textarea>
           </p>
           <p>
-            <label for="date">Fecha</label>
-            <input type="date" id="date" name="date" />
+            <input type="date" id="date" name="date" placeholder="Fecha de publicación" />
           </p>
-          <button id='submit'>Crear Mensaje</button>
+          <a class='button' id='submit'>Crear Mensaje</a>
       </div>  
       <!--
       <div class="alert">

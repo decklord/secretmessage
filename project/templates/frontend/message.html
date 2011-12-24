@@ -14,7 +14,11 @@
       $.getJSON('/api/resources/message/{{message.id}}/',function(response){
         console.log(response);
         if(response.time_to_reveal <= 0){
-          $('#defaultCountdown').html("mensaje:<b>"+response.message+"</b>");
+          dateEnd = new Date((new Date()).getTime() + 800+response.time_to_reveal*1000);
+          $('#defaultCountdown').countdown({until: dateEnd, format: 'YOWDHMS', onExpiry: function(){
+            $('#defaultCountdown').toggle('fast').html("mensaje:<b>"+response.message+"</b>").toggle('fast');
+          }});
+          
         } else{
           dateEnd = new Date((new Date()).getTime() + response.time_to_reveal*1000);
           $('#defaultCountdown').countdown({until: dateEnd, format: 'YOWDHMS',onExpiry: function(){set_message()}});
@@ -51,9 +55,7 @@
         El mensaje pudo ser abierto ahora!
       </div>
 
-      <h2>Mensaje: <span class="message_id">{{message.description}}</span></h2>
-      
-      <p>Te han enviado un mensaje secreto!, sin embargo aún no puedes verlo, tienes que esperar:</p>
+      <p>{{message.description}}</p>
       
       <div id="defaultCountdown"></div>
 

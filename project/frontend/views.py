@@ -8,9 +8,9 @@ def home(request):
     return render_to_response('frontend/home.html',
 	        context_instance=RequestContext(request))
 
-def message(request,id):
+def message(request,code):
 
-	message = Message.objects.get(pk=id)
+	message = Message.objects.get(code=code)
 
 	return render_to_response('frontend/message.html',{'message':message},context_instance=RequestContext(request))
 
