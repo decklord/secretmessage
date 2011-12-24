@@ -2,12 +2,15 @@
 <!DOCTYPE HTML>
 <html>
     <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <title>Secret Message</title>
+
         {% media js:lib/jquery-1.7.1.js %}
         {% media js:lib/underscore %}
         {% media js:lib/backbone %}
         {% media js:lib/require %}
         {% media js:lib/backbone-tastypie %}
-        {% media css:base %}
+        {% media css:screen %}
         <script type='text/javascript'>
             require.config({
                 baseUrl: "{{MEDIA_URL}}js/"
@@ -19,7 +22,7 @@
     </head>
 
     <body>
-        {% block content %}
-        {% endblock %}
+            {% block content %}
+            {% endblock %}
     </body>
 </html>

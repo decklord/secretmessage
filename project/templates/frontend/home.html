@@ -1,16 +1,45 @@
 {% extends "frontend/layout.html" %}
-
-{% block extra_head %}
-    
-
-
-{% endblock %}
-
-{% block header %}
-
-{% endblock %}
+{% block extra_head %}{% endblock %}
+{% block header %}{% endblock %}
 
 {% block container %}
+<p>Una aplicación que te permite crear mensajes a quien quieras y que no lo pueda ver hasta el momento indicado.</p>
+
+      <div id="create_message">
+        <h2>Crear Nuevo Mensaje</h2>
+
+        <form action="" method="post" accept-charset="utf-8">
+          <p>
+            <label for="title">Título</label>
+            <input type="text" name="title" value="" id="title">
+          </p>
+          <p>
+            <label for="message">Mensaje</label>
+            <textarea id="message" rows="15" cols="40"></textarea>
+          </p>
+          <p>
+            <label for="date">Fecha</label>
+            <input type="date" id="date" name="date" />
+          </p>
+          <p>
+            <label for="hour">Hora</label>
+            <input type="time" id="hour" name="hour" required="required" autocomplete="on" />
+          </p>
+          <input type="button" name="submit" value="Crear Mensaje" id="submit">
+        </form>
+      </div>  
+      <!--
+      <div class="alert">
+        Tu mensaje ha sido creado correctamente!
+      </div>
+
+      <h2>Ahora puedes</h2>
+
+      <ul id="actions">
+        <li>Envíar el link del mensaje: <a href="">http://secret-message.com/message/randomid1234</a></li>
+        <li>Editar o administrar el mensaje: <a href="">http://secret-message.com/message/randomid1234/admin/customCode</a></li>
+      </ul>
+      -->
 
 {% endblock %}
     
