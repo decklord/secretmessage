@@ -10,9 +10,13 @@
 
   <script type="text/javascript" charset="utf-8">
     $(document).ready(function() {
-    var newYear = new Date(); 
-    endDate = new Date(newYear.getFullYear()+1, 1 - 1, 2);
-    $('#defaultCountdown').countdown({until: endDate, format: 'YOWDHMS'}); 
+    
+      $.getJSON
+      
+      var newYear = new Date(); 
+      endDate = new Date(newYear.getFullYear()+1, 1 - 1, 2);
+      $('#defaultCountdown').countdown({until: endDate, format: 'YOWDHMS'}); 
+    
     });
   </script>
 
