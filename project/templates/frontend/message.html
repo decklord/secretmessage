@@ -2,8 +2,8 @@
 {% load media %}
 {% block extra_head %}
 
-  {% media js:jquery.countdown %}
-  {% media js:jquery.countdown-es %}
+  {% media js:lib/jquery.countdown %}
+  {% media js:lib/jquery.countdown-es %}
 
   {% media css:screen %}
   {% media css:jquery.countdown %}
@@ -11,12 +11,11 @@
   <script type="text/javascript" charset="utf-8">
     $(document).ready(function() {
     
-      $.getJSON
+      //$.getJSON('');
       
       var newYear = new Date(); 
       endDate = new Date(newYear.getFullYear()+1, 1 - 1, 2);
       $('#defaultCountdown').countdown({until: endDate, format: 'YOWDHMS'}); 
-    
     });
   </script>
 
@@ -29,6 +28,8 @@
       <p>Te han enviado un mensaje secreto!, sin embargo aún no puedes verlo, tienes que esperar:</p>
       
       <div id="defaultCountdown"></div>
+
+
     <!--
       <div class="alert">
         El mensaje pudo ser abierto ahora!
