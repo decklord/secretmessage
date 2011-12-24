@@ -1,5 +1,10 @@
 from django.db import models
 from django.contrib.auth.models import User
+import string, random
+
+def id_generator(size=6, chars=string.ascii_uppercase + string.digits):
+    return ''.join(random.choice(chars) for x in range(size))
+
 
 class UserProfile(models.Model):
     facebook_id = models.IntegerField(null=True, blank=True)
@@ -88,26 +93,26 @@ class UserProfile(models.Model):
     def email(self, value):
         self.user.email = value
 
-class Reader(Person)
-	mail = models.CharField(max_length = 255)
-
-class Writer(Person)
-	mail = models.CharField(max_length = 255)
+class Reader(models.Model):
+    mail = models.CharField(max_length = 255)
 
 class Message(models.Model):
-	
-	description = models.TextField()
-	message = models.TextField()
-	reveal_on = models.DateTimeField()
-	admin = models.ForeignKey(Writer)
-	opened = models.BooleanField()
-	readed = models.BooleanField()
+    description = models.TextField()
+    message = models.TextField()
+    reveal_on = models.DateTimeField()
+    opened = models.BooleanField(default=False)
+    readed = models.BooleanField(default=False)
+    admin_code = models.CharField(max_length = 255)
+    code = models.CharField(max_length = 255)
 
-	def open():
-		this.opened = True
-		this.save()
+    def save(self, *args, **kwargs):
+        if not self.code:
+            self.code = id_generator(36)
 
-	def read():
-		this.read = True
-		this.save()
+        super(Message, self).save(*args, **kwargs)
 
+
+
+class Writer(models.Model):
+    mail = models.CharField(max_length = 255)
+    message = models.ForeignKey(Message)

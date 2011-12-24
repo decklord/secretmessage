@@ -4,8 +4,27 @@ from tastypie.authorization import Authorization, DjangoAuthorization
 from tastypie import fields
 from api.helpers import FieldsValidation, AuthenticationByMethod
 from api.helpers import ExtendedModelResource as ModelResource
-from models import UserProfile
+from models import UserProfile, Message
+from tastypie.authorization import Authorization
 import settings
+
+from datetime import datetime
+
+class MessageResource(ModelResource):
+
+    class Meta:
+        queryset = Message.objects.all()
+        authorization = Authorization()
+        excludes = ['opened','readed']
+
+    def full_dehydrate(self, bundle):
+        bundle = super(MessageResource, self).full_dehydrate(bundle)
+        now = datetime.now()
+        if bundle.obj.reveal_on > now:
+            bundle.data['message'] = ""
+        del bundle.data['admin_code']
+        return bundle
+
 
 class UserProfileValidation(FieldsValidation):
 
