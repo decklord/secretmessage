@@ -4,6 +4,17 @@
   <meta http-equiv="Content-type" content="text/html; charset=utf-8">
   <title>Secret Message</title>
   <link rel="stylesheet" href="css/screen.css" type="text/css" media="screen" charset="utf-8">
+  <link rel="stylesheet" href="css/jquery.countdown.css" type="text/css" media="screen" charset="utf-8">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+  <script type="text/javascript" src="javascript/jquery.countdown.js"></script>
+    <script type="text/javascript" src="javascript/jquery.countdown-es.js"></script>
+  <script type="text/javascript" charset="utf-8">
+  $(document).ready(function() {
+      var newYear = new Date(); 
+      endDate = new Date(newYear.getFullYear()+1, 1 - 1, 2);
+      $('#defaultCountdown').countdown({until: endDate, format: 'YOWDHMS'}); 
+    });
+  </script>
 </head>
 <body>
   <div id="container">
@@ -14,36 +25,7 @@
       
       <p>Te han enviado un mensaje secreto!, sin embargo aún no puedes verlo, tienes que esperar:</p>
       
-      <div id="message_countdown">
-        <div id="year" class="field">
-          <p class="label">Año</p>
-          <p class="value">2011</p>
-        </div>
-        <span class="separator">:</span>
-        <div id="month" class="field">
-          <p class="label">Mes</p>
-          <p class="value">12</p>
-        </div>
-        <span class="separator">:</span>
-        <div id="day" class="field">
-          <p class="label">Día</p>
-          <p class="value">24</p>
-        </div>
-        <span class="separator">:</span>
-        <div id="hour" class="field">
-          <p class="label">Horas</p>
-          <p class="value">24</p>
-        </div>
-        <span class="separator">:</span>
-        <div id="minutes" class="field">
-          <p class="label">Minutos</p>
-          <p class="value">10</p>
-        </div>
-        <span class="separator">:</span>
-        <div id="seconds" class="field">
-          <p class="label">Segundos</p>
-          <p class="value">30</p>
-        </div>
+      <div id="defaultCountdown"></div>
       </div>
     </div>
   </div>
