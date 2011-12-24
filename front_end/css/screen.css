@@ -1,0 +1,132 @@
+body {
+	background-color: #51658F;
+}
+
+#main_title {
+	text-align: center;
+}
+
+#container {
+	border: 1px solid #484848;
+  margin: 0 auto;
+  padding: 15px;
+  width: 80%;
+	background-color: white;
+}
+
+#content {
+	overflow: hidden;
+}
+
+#create_message, #edit_message {
+/*	margin: 10px 30px;*/
+	width: 80%;
+	overflow: hidden;
+}
+
+form label {
+	float: left;
+	width: 80px;
+}
+
+textarea#message {
+	width: 70%;
+}
+
+input[type="button"] {
+	float: right;
+	font-size: 1.2em;
+	margin-right: 20%;
+}
+
+input[type="text"], input[type="date"], input[type="time"] {
+	width: 35%;
+}
+
+
+/* resultado */
+
+.alert {
+	background-color: #BCF8BB;
+  border: 1px solid #0EB40C;
+  padding: 10px;
+  text-align: center;
+}
+
+ul#actions li {
+	margin-bottom: 10px;
+}
+
+
+/* admin */
+#message_info .option {
+	font-size: 1.2em;
+	width: 250px;
+	float: left;
+}
+
+#message_info .value {
+	float: left;
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+#message_info .yes { 
+	color: green;
+}
+
+#message_info .no {
+	color: red;
+}
+
+#message_info ul li {
+	clear: both;
+}
+
+.message_id {
+	color: #5261AE;
+}
+
+/* lock */
+#message_countdown {
+/*	width: 60%;*/
+	font-size: 2em;
+  margin: 0 auto;
+  overflow: hidden;
+  padding-left: 17%;
+  text-align: center;
+}
+
+#message_countdown div {
+	overflow: hidden;
+}
+
+#message_countdown .field {
+	background-color: #C5C2B1;
+  -moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+  display: inline-block;
+	padding: 15px 25px;
+	float: left;
+}
+
+#message_countdown .field .label {
+	font-size: 0.6em;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+
+#message_countdown .field .value {
+	color: #555555;
+  margin: 10px 0 0;
+  text-align: center;
+	font-weight: bold;
+}
+
+#message_countdown .separator {
+	display: inline-block;
+	float: left;
+	margin-top: 30px;
+}

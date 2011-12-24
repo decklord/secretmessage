@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <title>Secret Message</title>
+  <link rel="stylesheet" href="css/screen.css" type="text/css" media="screen" charset="utf-8">
+</head>
+<body>
+  <div id="container">
+    <h1 id="main_title">Secret Message</h1>
+    
+    <div id="content">
+      <h2>Administrar Mensaje: <span class="message_id">idraro123</span></h2>
+      
+      <div id="message_info">
+        <ul>
+          <li><span class="option">Mensaje bloqueado visto?</span><span class="value yes">Sí</span></li>
+          <li><span class="option">Mensaje final visto?</span><span class="value no">No</span></li>
+        </ul>
+      </div>
+
+      <div id="edit_message">
+        <h2>Editar Mensaje</h2>
+
+        <form action="" method="post" accept-charset="utf-8">
+          <p>
+            <label for="title">Título</label>
+            <input type="text" name="title" value="un mensaje secreto" id="title">
+          </p>
+          <p>
+            <label for="message">Mensaje</label>
+            <textarea id="message" rows="15" cols="40">
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </textarea>
+          </p>
+          <p>
+            <label for="date">Fecha</label>
+            <input type="date" id="date" name="date" value="2011-12-24" />
+          </p>
+          <p>
+            <label for="hour">Hora</label>
+            <input type="time" id="hour" name="hour" required="required" autocomplete="on" value="22:36"/>
+          </p>
+          <input type="button" name="submit" value="Crear Mensaje" id="submit">
+        </form>
+      </div>  
+    </div>
+    
+  </div>
+</body>
+</html>
