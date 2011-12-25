@@ -1,13 +1,21 @@
 body {
-    /*background-image: url(http://pineritsum.com/images/bg.jpg);*/
+    background-image: url(../img/bkg.png);
     font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
     text-shadow: 1px 1px 1px #183347;   
     color: #fff;
     background-color:#295678;
+    margin: 0;
 }
+
+h1 a{
+    text-decoration: none;
+    color: white;
+}
+
 #header{
     width: 500px;
     margin: 0 auto;
+    background-image: url(../img/luz-logo.png);
 }
 .title {
     text-align: left;
@@ -22,7 +30,7 @@ body {
 }
 b.blue{
     font-size: 120%;
-    color: #ffa850;
+    color: #e2ae3d;
 }
 
 #container {
@@ -31,13 +39,8 @@ b.blue{
     width: 500px;
 }
 
-#content {
-    overflow: hidden;
-}
-
-#form, #form {
+#form {
 /*  margin: 10px 30px;*/
-    overflow: hidden;
 }
 
 /* resultado */
@@ -48,15 +51,22 @@ b.blue{
     text-align: center;
     border-radius: 10px;
     box-shadow: 1px 1px 1px #000;
+    margin-top: 20px;
 }
 
-.alert a{
+.alert span.link a{
     text-decoration:none;
     color: #b6d7eb;
 }
 
-.alert a:hover{
+.alert span.link a:hover{
     text-decoration: underline;
+}
+
+.logo{
+    width: 100px;
+    float: left;
+    margin-right: 10px;
 }
 
 ul#actions li {
@@ -97,13 +107,8 @@ ul#actions li {
     /*  width: 60%;*/
     font-size: 2em;
     margin: 0 auto;
-    overflow: hidden;
     padding-left: 17%;
     text-align: center;
-}
-
-#message_countdown div {
-    overflow: hidden;
 }
 
 #message_countdown .field .label {

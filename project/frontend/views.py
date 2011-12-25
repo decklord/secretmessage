@@ -12,7 +12,8 @@ def message(request,code):
 
 	message = Message.objects.get(code=code)
 
-	return render_to_response('frontend/message.html',{'message':message},context_instance=RequestContext(request))
+	return render_to_response('frontend/message.html',{'message':message},
+			context_instance=RequestContext(request))
 
 def admin_message(request):
 	return render_to_response('frontend/admin_message.html',

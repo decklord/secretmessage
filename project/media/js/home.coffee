@@ -1,11 +1,16 @@
 $(document).ready ->
     $('#date').datetimepicker()
 
+    $('.new').click ->
+        $('.form').toggle('fast')
+        $('.alert').toggle('fast')
+        return false
+
     $('#submit').click ->
         
         #date format: YYYY-MM-DD HH:MM[:ss[.uuuuuu]] 
         dateIsset = $('#date').val()
-        if dateIsset?
+        if dateIsset != ""
             future = $('#date').datetimepicker('getDate')
             now = new Date()
             ttr = Math.floor((future.getTime() - now.getTime() )/1000)
@@ -18,7 +23,7 @@ $(document).ready ->
             time_to_reveal : ttr
         }
 
-        if data.description? && data.message? && data.time_to_reveal?
+        if data.description != "" && data.message != "" && data.time_to_reveal != ""
 
             $.ajax
                 contentType: "application/json"
@@ -36,10 +41,15 @@ $(document).ready ->
                             console.log(r)
                             $('.link').html("<a href='message/"+r.code+"/'>Mensaje Oculto!</a>")
                             $('.alert').toggle('fast')
+                            $('.form').toggle('fast')
+                            $('#date').val("")
+                            $('#title').val("")
+                            $('#message').val("")
+
 
                 error : (error) ->
                     console.log "Error :("
                     console.log error
         
         else
-            alert("Missing Fields   ")
+            alert("Missing Fields")

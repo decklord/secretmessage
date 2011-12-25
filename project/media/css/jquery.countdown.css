@@ -2,9 +2,7 @@
 .hasCountdown {
 /*	background-color: #EEEEEE;*/
   margin: 0 auto;
-  overflow: hidden;
   text-align: center;
-  width: 500px;
 }
 .countdown_rtl {
 	direction: rtl;
@@ -39,7 +37,7 @@
 .countdown_show7 .countdown_section {
 	background-color: #88d5eb;
     border-radius: 10px 10px 10px 10px;
-    font-size: 1.2em;
+    font-size: 0.8em;
     margin: 2px;
     padding: 5px;
     width: 50px;
@@ -47,11 +45,10 @@
 .countdown_section {
 	display: block;
 	float: left;
-	font-size: 10%;
 	text-align: center;
 }
 .countdown_amount {
-	font-size: 200%;
+	font-size: 300%;
 }
 .countdown_descr {
 	display: block;

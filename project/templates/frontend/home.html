@@ -7,10 +7,13 @@
 {% block header %}{% endblock %}
 
 {% block container %}
-      <div class='alert' style='display:none'>
-        En hora buena, tu mensaje ha sido crado exitosamente! :D<br/>
-        Puedes enviar a tus amigos este link:<br/>
+      <div class='alert' style='display:none'>Good, your message has been created!<br/>
+        You can send this link to your friends:<br/>
         <span class='link'></span>
+        <br/>
+        <br/>
+        <a class='button new' href=''>Make Another!</a>
+
       </div>
 
       <div class="form">
@@ -23,7 +26,7 @@
           <p>
             <input type="date" id="date" name="date" placeholder="Publication Date" />
           </p>
-          <a class='button' id='submit'>Crear Mensaje</a>
+          <a class='button' id='submit'>Send it!</a>
       </div>  
 
 {% endblock %}

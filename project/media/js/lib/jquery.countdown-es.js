@@ -5,7 +5,7 @@
 	$.countdown.regional['es'] = {
 		labels: ['Años', 'Meses', 'Semanas', 'Días', 'Horas', 'Minutos', 'Segundos'],
 		labels1: ['Año', 'Mes', 'Semana', 'Día', 'Hora', 'Minuto', 'Segundo'],
-		compactLabels: ['a', 'm', 's', 'g'],
+		compactLabels: ['a', 'm', 's', 'd'],
 		whichLabels: null,
 		timeSeparator: ':', isRTL: false};
 	$.countdown.setDefaults($.countdown.regional['es']);

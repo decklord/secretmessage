@@ -15,13 +15,13 @@
         console.log(response);
         if(response.time_to_reveal <= 0){
           dateEnd = new Date((new Date()).getTime() + 800+response.time_to_reveal*1000);
-          $('#defaultCountdown').countdown({until: dateEnd, format: 'YOWDHMS', onExpiry: function(){
+          $('#defaultCountdown').countdown({until: dateEnd, format: 'YOWDHMS', compact: true, onExpiry: function(){
             $('#defaultCountdown').toggle('fast').html("mensaje:<b>"+response.message+"</b>").toggle('fast');
           }});
           
         } else{
           dateEnd = new Date((new Date()).getTime() + response.time_to_reveal*1000);
-          $('#defaultCountdown').countdown({until: dateEnd, format: 'YOWDHMS',onExpiry: function(){set_message()}});
+          $('#defaultCountdown').countdown({until: dateEnd, format: 'YOWDHMS',compact: true,onExpiry: function(){set_message()}});
           
         } 
 
